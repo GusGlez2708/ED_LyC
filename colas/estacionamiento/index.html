@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+  <meta charset="UTF-8" />
+  <title>Estacionamiento Autos (Cola Circular Doble)</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
+  <div class="parking-container">
+    <h1>Estacionamiento de Autos</h1>
+    <form id="formEntrada" class="formulario">
+      <input type="text" id="placas" placeholder="Placas del auto" maxlength="10" required />
+      <input type="text" id="propietario" placeholder="Nombre del propietario" required />
+      <button type="submit">Registrar entrada</button>
+    </form>
+
+    <div id="estadoEstacionamiento">
+      <h2>Autos estacionados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Placas</th>
+            <th>Propietario</th>
+            <th>Hora entrada</th>
+          </tr>
+        </thead>
+        <tbody id="listaAutos"></tbody>
+      </table>
+      <button id="salidaBtn">Salida de auto</button>
+      <div id="infoSalida"></div>
     </div>
-    <script src="script.js"></script>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>
