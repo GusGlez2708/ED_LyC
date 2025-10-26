@@ -2,16 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>Listar Palabras por Letra</title>
+    <link rel="stylesheet" href="../../standard_style.css">
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
+    <div class="container">
+        <h1>Listar Palabras por Letra</h1>
+        <div id="notification-container"></div>
+        <form id="formPalabra" class="form">
+            <input type="text" id="palabra" placeholder="Ingrese una palabra" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+" title="Solo se permiten palabras (letras sin espacios ni números).">
+            <button type="submit">Agregar Palabra</button>
+        </form>
+
+        <div id="contenedorListas">
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

@@ -2,17 +2,54 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>Ventanilla de Banco</title>
+    <link rel="stylesheet" href="../../standard_style.css">
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
+    <div class="container" style="width: 800px;">
+        <h1>Ventanilla de Banco</h1>
+        <form id="formCliente" class="form">
+            <input type="text" id="nombreCliente" placeholder="Nombre del Cliente" required pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s]+" title="El nombre solo puede contener letras y espacios.">
+            <select id="tipoMovimiento" required>
+                <option value="" disabled selected>Seleccione un tipo de movimiento</option>
+                <option value="Pago de servicio">Pago de servicio</option>
+                <option value="Depósito">Depósito</option>
+                <option value="Retiro">Retiro</option>
+                <option value="Compra de tiempo-aire">Compra de tiempo-aire</option>
+                <option value="Consulta de saldo">Consulta de saldo</option>
+            </select>
+            <button type="submit">Formar Cliente</button>
+        </form>
+
+        <button id="atenderBtn">Atender en Ventanilla</button>
+
+        <div id="infoCola" style="margin-top: 1rem; width: 100%; text-align: center;">
+            <p>Frente de la cola: <span id="frenteCola">N/A</span></p>
+            <p>Final de la cola: <span id="finalCola">N/A</span></p>
+        </div>
+
+        <h2>Cola de Clientes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No. Turno</th>
+                    <th>Nombre</th>
+                    <th>Tipo de Movimiento</th>
+                    <th>Hora de Llegada</th>
+                </tr>
+            </thead>
+            <tbody id="tablaClientes">
+            </tbody>
+        </table>
     </div>
     <script src="script.js"></script>
+
+    <div id="modal-backdrop" class="modal-backdrop">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <div id="modal-body"></div>
+            <button id="modal-accept-btn">Aceptar</button>
+        </div>
+    </div>
 </body>
 </html>
