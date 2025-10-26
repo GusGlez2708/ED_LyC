@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+  <meta charset="UTF-8" />
+  <title>Reemplazar Valor en Pila</title>
+  <link rel="stylesheet" href="../../standard_style.css"/>
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
-    </div>
-    <script src="script.js"></script>
+  <div class="container">
+    <h1>Reemplazar valor en pila</h1>
+    <form id="formPila" class="form">
+      <input type="text" id="pilaValores" placeholder="Valores separados por coma (ej. 2,5,5,9)" required />
+      <input type="number" id="viejo" placeholder="Valor a reemplazar" required />
+      <input type="number" id="nuevo" placeholder="Valor nuevo" required />
+      <button type="submit">Reemplazar</button>
+    </form>
+    <div id="resultadoPila" class="result-display"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

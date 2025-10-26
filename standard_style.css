@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
 :root {
   --main-bg: #15181b;
   --panel-bg: #23272d;
@@ -18,39 +21,44 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.sum-container {
+/* General container for exercises */
+.container {
   background: var(--panel-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   padding: 2.5rem;
-  width: 350px;
-  max-width: 92vw;
+  width: 400px;
+  max-width: 95vw;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.sum-container h1 {
+h1 {
   font-size: 2rem;
-  font-weight: 800;
   margin-bottom: 2rem;
+  font-weight: 700;
   background: linear-gradient(90deg, var(--accent), var(--accent2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
-#formSuma {
+.form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+  margin-bottom: 1.4rem;
 }
 
-#formSuma input {
+input[type="text"], input[type="number"] {
   padding: 0.9rem 1rem;
   background: var(--input-bg);
   border: none;
@@ -62,11 +70,11 @@ body {
   transition: background 0.2s;
 }
 
-#formSuma input:focus {
+input:focus {
   background: #383c44;
 }
 
-#formSuma button {
+button {
   padding: 0.9rem;
   border-radius: var(--border-radius);
   border: none;
@@ -79,11 +87,11 @@ body {
   box-shadow: 0 2px 7px rgba(225,82,239, 0.13);
 }
 
-#formSuma button:hover {
+button:hover {
   background: linear-gradient(90deg, #57ecb5 60%, #e152ef 100%);
 }
 
-#resultado {
+.result-display {
   margin-top: 1.7rem;
   padding: 1.1rem;
   background: #1c1f23;
@@ -93,4 +101,83 @@ body {
   word-break: break-all;
   width: 100%;
   text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background: #21252b;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.8rem;
+  text-align: left;
+}
+
+th {
+  background: #262932;
+  color: var(--accent2);
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #23272d;
+}
+
+/* Styles for the main menu */
+.menu-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.practica {
+    background: var(--panel-bg);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.practica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+.practica h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent2);
+    border-bottom: 2px solid var(--accent);
+}
+
+.practica ul {
+    list-style: none;
+    padding: 0;
+}
+
+.practica ul li {
+    margin-bottom: 1rem;
+}
+
+.practica ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.practica ul li a:hover {
+    color: var(--accent);
 }

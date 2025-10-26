@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+  <meta charset="UTF-8" />
+  <title>Eliminar y ordenar productos (Lista)</title>
+  <link rel="stylesheet" href="../../standard_style.css"/>
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
+  <div class="container">
+    <h1>Lista de Productos</h1>
+    <form id="formProducto" class="form">
+      <input type="text" id="nombre" placeholder="Nombre del producto" required />
+      <input type="number" id="precio" placeholder="Precio" min="0.01" step="0.01" required />
+      <button type="submit">Agregar producto</button>
+    </form>
+    <form id="formBorrar" class="form" style="margin-top: 1rem;">
+      <input type="text" id="claveEliminar" placeholder="Nombre del producto a eliminar" required />
+      <button type="submit">Eliminar producto</button>
+    </form>
+    <div id="estadoLista">
+      <h2>Productos ordenados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody id="lista"></tbody>
+      </table>
+      <div id="costoTotal" class="result-display"></div>
     </div>
-    <script src="script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
