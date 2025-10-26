@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Elementos del DOM
     const formCliente = document.getElementById('formCliente');
     const nombreClienteInput = document.getElementById('nombreCliente');
     const tipoMovimientoSelect = document.getElementById('tipoMovimiento');
@@ -8,16 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const frenteColaSpan = document.getElementById('frenteCola');
     const finalColaSpan = document.getElementById('finalCola');
 
-    // Elementos del Modal
     const modalBackdrop = document.getElementById('modal-backdrop');
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
     const modalAcceptBtn = document.getElementById('modal-accept-btn');
 
-    // Estado de la aplicación
     let colaClientes = [];
     let turnoCounter = 0;
-    const MAX_CLIENTES = 10; // Límite de la cola
+    const MAX_CLIENTES = 10; 
 
     class Cliente {
         constructor(turno, nombre, tipoMovimiento, horaLlegada) {
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Lógica del Modal ---
     const showModal = (title, bodyContent) => {
         modalTitle.textContent = title;
         modalBody.innerHTML = bodyContent;
@@ -41,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalAcceptBtn.addEventListener('click', hideModal);
 
-    // --- Métodos de la Cola ---
     const colaLlena = () => colaClientes.length >= MAX_CLIENTES;
     const colaVacia = () => colaClientes.length === 0;
 
@@ -61,12 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         finalColaSpan.textContent = !colaVacia() ? `${colaClientes[colaClientes.length - 1].nombre} (Turno ${colaClientes[colaClientes.length - 1].turno})` : 'N/A';
     };
 
-    // --- Event Listeners ---
     formCliente.addEventListener('submit', (e) => {
         e.preventDefault();
 
         if (colaLlena()) {
-            // Esta alerta se mantiene como la original, según lo pedido
             alert('Error de sobreflujo: La cola del banco está llena. Por favor, espere.');
             return;
         }
@@ -74,14 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const nombre = nombreClienteInput.value.trim();
         const tipoMovimiento = tipoMovimientoSelect.value;
 
-        // Las validaciones de campos vacíos y patrón las maneja el navegador
 
         turnoCounter++;
         const horaLlegada = new Date();
         const nuevoCliente = new Cliente(turnoCounter, nombre, tipoMovimiento, horaLlegada);
 
         colaClientes.push(nuevoCliente);
-        actualizarVista(); // Actualizar la tabla ANTES de mostrar el modal
+        actualizarVista(); 
 
         const modalContent = `
             <p><strong>No. Turno:</strong> ${nuevoCliente.turno}</p>
@@ -97,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     atenderBtn.addEventListener('click', () => {
         if (colaVacia()) {
-            // Esta alerta se mantiene
             alert('La cola está vacía. No hay clientes para atender.');
             return;
         }
@@ -106,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const horaAtencion = new Date();
         const tiempoEsperaSegundos = Math.round((horaAtencion - clienteAtendido.horaLlegada) / 1000);
 
-        actualizarVista(); // Actualizar la tabla INMEDIATAMENTE
+        actualizarVista(); 
 
         const modalContent = `
             <p><strong>Tiempo de espera en la cola:</strong> ${tiempoEsperaSegundos} segundos</p>
@@ -114,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showModal(`Cliente Atendido: ${clienteAtendido.nombre}`, modalContent);
     });
 
-    // --- Inyección de Estilos para el Modal ---
     const style = document.createElement('style');
     style.innerHTML = `
         .modal-backdrop {
@@ -155,6 +145,5 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    // Inicializar
     actualizarVista();
 });
