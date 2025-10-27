@@ -2,16 +2,46 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>Alumnos Aprobados y Reprobados</title>
+    <link rel="stylesheet" href="../../standard_style.css">
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
+    <div class="container" style="width: 800px;">
+        <h1>Alumnos Aprobados y Reprobados</h1>
+        <form id="formAlumno" class="form">
+            <input type="text" id="nombre" placeholder="Nombre del Alumno" required>
+            <input type="number" id="calificacion" placeholder="Calificación (0-10)" min="0" max="10" step="0.1" required>
+            <button type="submit">Agregar Alumno</button>
+        </form>
+
+        <div style="display: flex; justify-content: space-around; width: 100%;">
+            <div>
+                <h2>Alumnos Aprobados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaAprobados">
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2>Alumnos Reprobados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaReprobados">
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

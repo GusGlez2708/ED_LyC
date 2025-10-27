@@ -2,16 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="../../standard_style.css">
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
+    <div class="container" style="width: 600px;">
+        <h1>Productos Disponibles y Retirados</h1>
+        <div class="form">
+            <button id="agregarBtn">Agregar Nuevo Producto</button>
+        </div>
+
+        <div id="info-productos">
+            <p>Productos Disponibles: <span id="disponiblesCount">0</span></p>
+            <p>Productos Retirados: <span id="retiradosCount">0</span></p>
+        </div>
+
+        <h2>Productos Disponibles</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tablaDisponibles">
+            </tbody>
+        </table>
+
+        <h2>Productos Retirados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="tablaRetirados">
+            </tbody>
+        </table>
     </div>
     <script src="script.js"></script>
 </body>
