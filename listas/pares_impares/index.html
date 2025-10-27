@@ -3,16 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>Listas - Pares e Impares</title>
+    <link rel="stylesheet" href="../../standard_style.css">
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
+
+    <div class="container">
+        <h1>Separar Pares e Impares</h1>
+        <p style="text-align: center; margin-top: -1rem; margin-bottom: 2rem; color: #ccc;">
+            Genera una lista de números aleatorios y la aplicación los clasificará.
+        </p>
+        
+        <form class="form" id="numbers-form">
+            <input type="number" id="quantity-input" placeholder="¿Cuántos números generar?" min="1" max="100" required>
+            <input type="number" id="max-value-input" placeholder="Valor máximo (ej: 100)" min="1" max="100" required>
+            <button type="submit">Generar y Separar</button>
+        </form>
+        <div id="results-container">
+            <h3>Lista Original:</h3>
+            <p id="original-list-display" class="result-display"></p>
+
+            <h3>Números Pares:</h3>
+            <p id="even-list-display" class="result-display"></p>
+
+            <h3>Números Impares:</h3>
+            <p id="odd-list-display" class="result-display"></p>
+        </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

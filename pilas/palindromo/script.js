@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         resultDisplay.textContent = resultMessage;
         resultContainer.style.display = 'block';
+        
     });
     wordInput.addEventListener('input', () => {
         clearError();
