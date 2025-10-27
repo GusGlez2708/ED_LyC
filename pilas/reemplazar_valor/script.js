@@ -23,6 +23,12 @@ document.getElementById('formPila').addEventListener('submit', function(e){
     return;
   }
 
+  // Validar que el valor viejo exista en la pila original
+  if (!pila.includes(viejo)) {
+    document.getElementById('resultadoPila').innerText = "El valor a reemplazar no existe en la pila original.";
+    return;
+  }
+
   let pilaAntes = [...pila];
   let pilaDespues = reemplazarPila(pila, nuevo, viejo);
   document.getElementById('resultadoPila').innerHTML =
