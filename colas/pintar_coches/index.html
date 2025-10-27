@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>Juego: Pintar Coches</title>
+    <link rel="stylesheet" href="../../standard_style.css">
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
+
+    <div class="container game-container">
+        <h1>Juego: Pintar Coches</h1>
+        <div id="start-screen">
+            <p style="text-align: center; margin-bottom: 2rem;">
+                Pinta los coches del color que se indica antes de que la cola llegue a 5. ¡Demuestra tu velocidad!
+            </p>
+            <button id="start-btn">Iniciar Juego</button>
+        </div>
+        <div id="game-board">
+            <div id="stats-bar">
+                <div>Carros Pintados: <span id="score-display">0</span></div>
+                <div>Tiempo: <span id="time-display">0s</span></div>
+            </div>
+            <h3>Cola de Atención</h3>
+            <div id="car-queue-container">
+            </div>
+
+            <h3>Paleta de Colores</h3>
+            <div id="color-palette">
+            </div>
+        </div>
     </div>
+    <div id="game-over-modal">
+        <div class="container" style="text-align: center;">
+            <h1 id="modal-title">¡Juego Terminado!</h1>
+            <p id="final-score" class="result-display" style="font-size: 1.1rem;"></p>
+            <button id="restart-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
