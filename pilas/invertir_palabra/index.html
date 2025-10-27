@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>Pilas - Invertir Palabra</title>
+   
+    <link rel="stylesheet" href="../../standard_style.css">
 </head>
 <body>
-    <header>
-        <a href="../../index.html"><h1>Volver</h1></a>
-    </header>
-    <div class="ejercicio-container">
-        <p>Próximamente</p>
+
+    <div class="container">
+        <h1>Invertir Palabra</h1>
+        
+        <form class="form" id="inverter-form">
+            <input type="text" id="word-input" placeholder="Escribe una palabra" required>
+            <button type="submit">Invertir</button>
+        </form>
+        <div id="result-container" style="display: none;">
+            <h3>Palabra Invertida:</h3>
+            <p id="result-display" class="result-display"></p>
+        </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

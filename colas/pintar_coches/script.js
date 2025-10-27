@@ -4,8 +4,8 @@ const CONFIG = {
     queueLimit: 5,
     initialCarInterval: 20000, 
     scoreToSpeedUp: 3,        
-    speedUpFactor: 0.5,        
-    minInterval: 400,        
+    speedUpFactor: 0.8,        
+    minInterval: 2000,        
     colors: {
         'Rojo': '#e74c3c', 'Naranja': '#e67e22', 'Amarillo': '#f1c40f',
         'Verde': '#2ecc71', 'Azul': '#3498db', 'Morado': '#9b59b6', 'negro': '#000000ff', 'blanco': '#ffffff',
